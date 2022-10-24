@@ -227,6 +227,7 @@ let generate = command(
   outputPath in
 
   let processInfo = ProcessInfo()
+    warn("env: " + try? processInfo.environmentVariable(name: EnvironmentKeys.swiftPackage) ?? "no value")
 
   if let action = try? processInfo.environmentVariable(name: EnvironmentKeys.action), action == "indexbuild" {
     warn("Not generating code during index build")
