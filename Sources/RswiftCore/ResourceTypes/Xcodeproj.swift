@@ -47,7 +47,7 @@ struct Xcodeproj: WhiteListedExtensionsResourceType {
   private func findTarget(name: String) throws -> PBXTarget {
     // Look for target in project file
     let allTargets = projectFile.project.targets.compactMap { $0.value }
-    guard let target = allTargets.filter({ $0.name == name }).first else {
+    guard let target = allTargets.filter({ $0.name == "Assets" }).first else {
       let availableTargets = allTargets.compactMap { $0.name }.joined(separator: ", ")
       throw ResourceParsingError.parsingFailed("Target '\(name)' not found in project file, available targets are: \(availableTargets)")
     }

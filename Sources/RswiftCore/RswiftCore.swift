@@ -141,10 +141,12 @@ public struct RswiftCore {
 
         resources = try findResources(for: xcodeproj, ignoreFile: ignoreFile)
         structGenerators = buildStructGenerators(for: resources, buildConfigurations: buildConfigurations, developmentLanguage: xcodeproj.developmentLanguage)
-
       case .swiftPackage(let packageURL):
-        let packageGraph = try loadSwiftPackageGraph(packageURL: packageURL)
-        let target = try getSwiftPackageTarget(callInformation.targetName, from: packageGraph)
+          let paths = packageURL.pathComponents.dropLast()
+          let newPath = String(paths.joined(separator: "/").dropFirst())
+          let newUrl = URL(fileURLWithPath: newPath)
+        let packageGraph = try loadSwiftPackageGraph(packageURL: newUrl)
+          let target = try getSwiftPackageTarget("Assets", from: packageGraph)
 
         resources = try findResources(for: target, ignoreFile: ignoreFile)
         structGenerators = buildStructGenerators(for: resources, buildConfigurations: nil, developmentLanguage: "en")
