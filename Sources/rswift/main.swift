@@ -247,6 +247,7 @@ let generate = command(
     swiftPackage = xcodeproj
     xcodeproj = nil
   }
+    warn(swiftPackage ?? "no package")
 
   let resourcesOrigin: ResourcesOrigin
 
