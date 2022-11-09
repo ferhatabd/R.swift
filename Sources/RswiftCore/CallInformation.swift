@@ -36,6 +36,8 @@ public struct CallInformation {
   let sourceRootURL: URL
   let sdkRootURL: URL
   let platformURL: URL
+    
+    let builderPackage: URL?
 
   public init(
     outputURL: URL,
@@ -57,7 +59,9 @@ public struct CallInformation {
     developerDirURL: URL,
     sourceRootURL: URL,
     sdkRootURL: URL,
-    platformURL: URL
+    platformURL: URL,
+    
+    builderPackage: URL?
   ) {
     self.outputURL = outputURL
     self.uiTestOutputURL = uiTestOutputURL
@@ -80,6 +84,8 @@ public struct CallInformation {
     self.sourceRootURL = sourceRootURL
     self.sdkRootURL = sdkRootURL
     self.platformURL = platformURL
+      
+      self.builderPackage = builderPackage
   }
 
   func urlForSourceTreeFolder(_ sourceTreeFolder: SourceTreeFolder) -> URL {

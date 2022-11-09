@@ -145,8 +145,13 @@ public struct RswiftCore {
           let paths = packageURL.pathComponents.dropLast()
           let newPath = String(paths.joined(separator: "/").dropFirst())
           let newUrl = URL(fileURLWithPath: newPath)
+          var builderPackageGraph: PackageGraph?
+          if let builderURL = callInformation.builderPackage {
+              builderPackageGraph = try loadSwiftPackageGraph(packageURL: builderURL)
+          }
+          
         let packageGraph = try loadSwiftPackageGraph(packageURL: newUrl)
-          let target = try getSwiftPackageTarget("Assets", from: packageGraph)
+          let target = try getSwiftPackageTarget("Assets", from: builderPackageGraph ?? packageGraph)
 
         resources = try findResources(for: target, ignoreFile: ignoreFile)
         structGenerators = buildStructGenerators(for: resources, buildConfigurations: nil, developmentLanguage: "en")
@@ -274,7 +279,6 @@ func loadSwiftPackageGraph(packageURL: URL) throws -> PackageGraph {
   }
 
   let packagePath = AbsolutePath(packageURL.path)
-
   let customToolchain = try UserToolchain(destination: .hostDestination())
   let manifestLoader = ManifestLoader(
     toolchain: customToolchain.configuration,

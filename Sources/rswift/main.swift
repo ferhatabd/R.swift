@@ -86,6 +86,7 @@ struct EnvironmentKeys {
   static let scriptOutputFileCount = "SCRIPT_OUTPUT_FILE_COUNT"
   static let target = "TARGET_NAME"
   static let swiftPackage = "SWIFT_PACKAGE"
+    static let builderPackakge = "RSWIFT_BUILD_FOR_PACKAGE"
   static let xcodeproj = "PROJECT_FILE_PATH"
   static let infoPlistFile = "INFOPLIST_FILE"
   static let codeSignEntitlements = "CODE_SIGN_ENTITLEMENTS"
@@ -242,6 +243,7 @@ let generate = command(
 
   var swiftPackage = try? processInfo.environmentVariable(name: EnvironmentKeys.swiftPackage)
   var xcodeproj = try? processInfo.environmentVariable(name: EnvironmentKeys.xcodeproj)
+    let builderPackage = try? processInfo.environmentVariable(name: EnvironmentKeys.builderPackakge)
 
   if (xcodeproj as? NSString)?.lastPathComponent == "Package.swift" {
     swiftPackage = xcodeproj
@@ -311,8 +313,18 @@ let generate = command(
     developerDirURL: URL(fileURLWithPath: developerDirPath),
     sourceRootURL: URL(fileURLWithPath: sourceRootPath),
     sdkRootURL: URL(fileURLWithPath: sdkRootPath),
-    platformURL: URL(fileURLWithPath: platformPath)
+    platformURL: URL(fileURLWithPath: platformPath),
+    builderPackage: {
+        if let path = builderPackage, case(.swiftPackage(let baseUrl)) = resourcesOrigin {
+            let paths = baseUrl.pathComponents.dropLast(2)
+            let newPath = String(paths.joined(separator: "/").dropFirst())
+            let newUrl = URL(fileURLWithPath: newPath)
+            return newUrl.appendingPathComponent(path)
+        }
+        return nil
+    }()
   )
+    
 
   try RswiftCore(callInformation).run()
 }
