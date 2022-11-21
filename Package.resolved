@@ -28,6 +28,15 @@
       }
     },
     {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections.git",
+      "state" : {
+        "revision" : "f504716c27d2e5d4144fa4794b12129301d17729",
+        "version" : "1.0.3"
+      }
+    },
+    {
       "identity" : "swift-crypto",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-crypto.git",
@@ -41,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-driver.git",
       "state" : {
-        "branch" : "release/5.6",
-        "revision" : "9982f32f96a2e0e597d1b4a0af4a7e997dc471be"
+        "branch" : "release/5.7",
+        "revision" : "82b274af66cfbb8f3131677676517b34d01e30fd"
       }
     },
     {
@@ -50,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-llbuild.git",
       "state" : {
-        "branch" : "release/5.6",
-        "revision" : "acd686530e56122d916acd49a166beb9198e9b87"
+        "branch" : "release/5.7",
+        "revision" : "564424db5fdb62dcb5d863bdf7212500ef03a87b"
       }
     },
     {
@@ -59,8 +68,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-package-manager",
       "state" : {
-        "branch" : "release/5.6",
-        "revision" : "d53983abc7d1628a47ee26b24cbf35b06ac50f6e"
+        "branch" : "release/5.7",
+        "revision" : "e7b2c1a261ee74cc1214ee4e97a7706e7c05f7d1"
+      }
+    },
+    {
+      "identity" : "swift-system",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-system.git",
+      "state" : {
+        "revision" : "836bc4557b74fe6d2660218d56e3ce96aff76574",
+        "version" : "1.1.1"
       }
     },
     {
@@ -68,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-tools-support-core.git",
       "state" : {
-        "branch" : "release/5.6",
-        "revision" : "107e570e3565920174d5a25bc3a0340b32d16042"
+        "branch" : "release/5.7",
+        "revision" : "afc0938503bac012f76ceb619d031f63edc4c5f7"
       }
     },
     {
@@ -77,8 +95,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tomlokhorst/XcodeEdit",
       "state" : {
-        "revision" : "99547c5af5850155b52c43b716ba1b094b02a3b2",
-        "version" : "2.8.0"
+        "revision" : "cd466d6e8c5ffd2f2b61165d37b0646f09068e1e",
+        "version" : "2.9.0"
       }
     },
     {

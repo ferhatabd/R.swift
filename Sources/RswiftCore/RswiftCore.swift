@@ -281,7 +281,7 @@ func loadSwiftPackageGraph(packageURL: URL) throws -> PackageGraph {
   let packagePath = AbsolutePath(packageURL.path)
   let customToolchain = try UserToolchain(destination: .hostDestination())
   let manifestLoader = ManifestLoader(
-    toolchain: customToolchain.configuration,
+    toolchain: customToolchain,
     isManifestSandboxEnabled: false)
 
   let workspace = try Workspace(
