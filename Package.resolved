@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-crypto.git",
       "state" : {
-        "revision" : "ddb07e896a2a8af79512543b1c7eb9797f8898a5",
-        "version" : "1.1.7"
+        "revision" : "75ec60b8b4cc0f085c3ac414f3dca5625fa3588e",
+        "version" : "2.2.4"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-driver.git",
       "state" : {
-        "branch" : "release/5.7",
-        "revision" : "82b274af66cfbb8f3131677676517b34d01e30fd"
+        "branch" : "release/5.8",
+        "revision" : "0edcbe397262f4adca5bae3d1c51edd04f0772d5"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-llbuild.git",
       "state" : {
-        "branch" : "release/5.7",
-        "revision" : "564424db5fdb62dcb5d863bdf7212500ef03a87b"
+        "branch" : "release/5.8",
+        "revision" : "168f9dc3798def1ecdd7d40049f6e1841bf761d0"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-package-manager",
       "state" : {
-        "branch" : "release/5.7",
-        "revision" : "e7b2c1a261ee74cc1214ee4e97a7706e7c05f7d1"
+        "branch" : "release/5.8",
+        "revision" : "bc513507b6c48e493501bc057694fd6d200e64cd"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-tools-support-core.git",
       "state" : {
-        "branch" : "release/5.7",
-        "revision" : "afc0938503bac012f76ceb619d031f63edc4c5f7"
+        "branch" : "release/5.8",
+        "revision" : "ac4871e01ef338cb95b5d28328cab0ec1dfae935"
       }
     },
     {
@@ -104,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jpsim/Yams.git",
       "state" : {
-        "revision" : "9ff1cc9327586db4e0c8f46f064b6a82ec1566fa",
-        "version" : "4.0.6"
+        "revision" : "0d9ee7ea8c4ebd4a489ad7a73d5c6cad55d6fed3",
+        "version" : "5.0.6"
       }
     }
   ],
